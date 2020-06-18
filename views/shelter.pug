@@ -17,7 +17,7 @@ block content
         .card-columns
             -const pets = shelter.animals
             each pet in pets
-                .card.pt-3.mb-5.h-100
+                .card.pt-3.mb-5
                     .text-center
                         img(src=`/img/pets/${pet.photo}` class="card-img-top rounded-circle" alt="PHOTO")
                         -if(pet.adopted === true)

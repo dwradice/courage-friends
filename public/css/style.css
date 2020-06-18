@@ -29,14 +29,16 @@ body {
 
 /* HEADER */
 
-.logo {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-}
-
 #main-nav {
   border-bottom: #2e0152 2px solid;
+}
+
+#main-nav i {
+  color: #2e0152;
+}
+
+#main-nav i:hover {
+  color: #2e015291;
 }
 
 #main-nav .nav-link {
@@ -151,9 +153,9 @@ body {
   top: 22%;
 }
 
-#mapbox {
+/* #mapbox {
   min-height: 400px;
-}
+} */
 
 /* ERROR PAGE */
 
@@ -189,8 +191,25 @@ body {
   .showcase-text p {
     font-size: 0.8rem;
   }
+  #shelter-landing h3 {
+    font-size: 2rem !important;
+  }
 
-  #search button {
-    width: 100%;
+  #logo {
+    height: 80px;
+  }
+  #main-nav h4 {
+    display: none;
+  }
+
+  #map {
+    max-height: 200px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  #cards {
+    margin-left: 40px;
+    margin-right: 40px;
   }
 }
