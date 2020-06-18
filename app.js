@@ -5,6 +5,7 @@ const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
+const compression = requrie('compression');
 
 const globalErrorHandler = require('./controllers/errorController');
 const petRouter = require('./routes/petRoutes');
@@ -49,6 +50,8 @@ app.use(
     whitelist: ['species', 'breed', 'shelter', 'age', 'sex'],
   })
 );
+
+app.use(compression());
 
 // ROUTES
 app.use('/', viewRouter);
