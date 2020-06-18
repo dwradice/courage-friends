@@ -1,0 +1,39 @@
+extends base
+
+block content
+    section#showcase
+      .overlay
+        .container
+          .showcase-text.text-white
+            h3.pt-5 Man's Best Friend Finder
+            p find your quintessential companion.
+
+    section#cards
+      .container
+        .card-columns
+            each pet in pets
+              .card.pt-3.mb-5
+                  .text-center
+                      img(src=`/img/pets/${pet.photo}` id="pet-photo" class="card-img-top rounded-circle" alt="PHOTO")
+                      -if(pet.adopted === true)
+                            .adopted
+                                h3.adopted-text Adopted!
+
+                  .card-body
+                      h4.card-title.name.pb-2= pet.name
+
+                      -pet.age >= 1 ? ageIntro = `${pet.age} year old` : ageIntro = `Less than a year old ${pet.age}`
+
+                      h5.card-subtitle.pet-age.pb-2= ageIntro
+                      
+                      h5.card-subtitle= ` ${pet.sex}`
+                          
+                      hr
+
+                      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae culpa nobis, nisi illo modi iste?
+                  
+
+                  .card-footer.text-white
+                      p Available for adoption at...
+                      a.btn.btn-outline-light.shelterLink(href=`/shelter/${pet.shelter.slug}`)=pet.shelter.name
+ 

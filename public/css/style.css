@@ -1,0 +1,196 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Raleway';
+  background-color: #f8f9fa;
+}
+/* UTILITY */
+
+.overlay {
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(181, 111, 213, 0.69),
+    rgba(53, 13, 77, 0.75)
+  );
+  min-height: 300px;
+}
+
+.btn-purple {
+  color: #fff;
+  background-color: #2e0152;
+}
+
+/* HEADER */
+
+.logo {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#main-nav {
+  border-bottom: #2e0152 2px solid;
+}
+
+#main-nav .nav-link {
+  font-size: 24px;
+}
+
+/* OVERVIEW PAGE */
+
+#showcase {
+  position: relative;
+  background-image: url('/img/showcase.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
+
+  min-height: 300px;
+  margin-bottom: 40px;
+}
+
+.showcase-text {
+  position: absolute;
+  top: 30%;
+  text-shadow: black 2px 2px;
+}
+
+.showcase-text h3 {
+  font-size: 3rem;
+}
+
+.showcase-text p {
+  font-size: 1.2rem;
+}
+
+/* CARDS */
+
+#cards .card-img-top {
+  height: 250px;
+  width: 250px;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+#cards .card {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+#cards .name {
+  display: inline-block;
+  font-size: 40px;
+  color: #fff;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(181, 111, 213, 0.85),
+    rgba(53, 13, 77, 0.781)
+  );
+}
+
+#cards .card-footer {
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(117, 55, 145, 0.747),
+    rgba(32, 7, 46, 0.781)
+  );
+}
+
+/* SHELTER PAGE */
+
+#shelter-landing {
+  padding: 5px;
+  color: #fff;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(117, 55, 145, 0.747),
+    rgba(32, 7, 46, 0.781)
+  );
+}
+
+#cards .shelterLink {
+  text-decoration: none;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #fff;
+}
+
+#cards .shelterLink:hover {
+  color: #2e0152;
+  border: #2e0152 1px;
+  border-style: inset;
+}
+
+.adopted {
+  position: absolute;
+  margin: auto;
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(181, 111, 213, 0.69),
+    rgba(53, 13, 77, 0.75)
+  );
+}
+
+.adopted-text {
+  position: relative;
+  font-size: 50px;
+  top: 22%;
+}
+
+#mapbox {
+  min-height: 400px;
+}
+
+/* ERROR PAGE */
+
+#error {
+  min-height: 600px;
+  padding: 20px;
+}
+
+/* FOOTER */
+
+#footer {
+  background-color: #2e0152;
+  color: white;
+}
+
+@media (max-width: 992px) {
+  #cards .shelterLink {
+    font-size: 1rem;
+  }
+  .pet-age {
+    display: none;
+  }
+
+  .adopted-text {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .showcase-text h3 {
+    font-size: 2rem;
+  }
+  .showcase-text p {
+    font-size: 0.8rem;
+  }
+
+  #search button {
+    width: 100%;
+  }
+}

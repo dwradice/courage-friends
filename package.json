@@ -1,0 +1,23 @@
+{
+  "name": "courage",
+  "version": "1.0.0",
+  "description": "Pet Finder webapp rendered via node.js and api",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "Dylan Radice",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-mongo-sanitize": "^2.0.0",
+    "express-rate-limit": "^5.1.3",
+    "helmet": "^3.23.0",
+    "hpp": "^0.2.3",
+    "mongoose": "^5.9.18",
+    "pug": "^3.0.0",
+    "slugify": "^1.4.0",
+    "xss-clean": "^0.1.1"
+  }
+}

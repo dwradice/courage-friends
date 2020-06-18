@@ -1,0 +1,59 @@
+extends base
+
+block append head   
+    script(src='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js')
+    link(href='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css' rel='stylesheet')
+
+
+block content
+    section#shelter-landing
+        .container
+            h3.display-3=shelter.name
+    section#mapbox.mb-5
+        #map(data-location=`${JSON.stringify(shelter.location)}` style='width: 100%; height: 400px;')
+
+    section#cards
+      .container
+        .card-columns
+            -const pets = shelter.animals
+            each pet in pets
+                .card.pt-3.mb-5.h-100
+                    .text-center
+                        img(src=`/img/pets/${pet.photo}` class="card-img-top rounded-circle" alt="PHOTO")
+                        -if(pet.adopted === true)
+                            .adopted
+                                h3.adopted-text Adopted!
+                    .card-body
+                        h4.card-title.name.pb-2= pet.name
+
+                        -pet.age >= 1 ? ageIntro = `${pet.age} year old` : ageIntro = `Less than a year old ${pet.age}`
+
+                        h5.card-subtitle.pb-2= ageIntro
+                        h5.card-subtitle= `${pet.sex}`
+                        hr
+
+                        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae culpa nobis, nisi illo modi iste?
+    section#contact
+        .container
+            .row.mb-5
+                .col-lg-9
+                    h3 Ready to meet your new best friend?
+                    form
+                        .input-group.input-group-lg.mb-3
+                            .input-group-prepend
+                                span.input-group-text
+                                    i.fas.fa-user
+                            input(type="text" class="form-control" placeholder="Name")
+                        .input-group.input-group-lg.mb-3
+                            .input-group-prepend
+                                span.input-group-text
+                                    i.fas.fa-envelope-open
+                            input(type="email" class="form-control" placeholder="Email")
+                        .input-group.input-group-lg.mb-3
+                            .input-group-prepend
+                                span.input-group-text
+                                    i.fas.fa-pencil-alt
+                            textarea.form-control( placeholder="Message" rows="5")
+                        input(type="submit" value="Submit" class="btn btn-purple btn-block btn-lg")
+                .col-lg-3.align-self-center.text-center.pt-3
+                    img(src="/img/courage-logo.png" alt="" class="img-fluid")
