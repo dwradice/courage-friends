@@ -4,7 +4,8 @@
   "description": "Pet Finder webapp rendered via node.js and api",
   "main": "app.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "start:dev": "nodemon server.js"
   },
   "author": "Dylan Radice",
   "license": "ISC",

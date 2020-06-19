@@ -120,6 +120,20 @@ body {
   );
 }
 
+.map-popup h4 {
+  font-size: 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+#contact-info {
+  color: #2e0152;
+}
+
+#contact-info h4 {
+  color: ;
+}
+
 #cards .shelterLink {
   text-decoration: none;
   font-size: 1.5rem;
@@ -131,6 +145,10 @@ body {
   color: #2e0152;
   border: #2e0152 1px;
   border-style: inset;
+}
+
+#cards .display-4 {
+  color: #2e0152;
 }
 
 .adopted {
@@ -209,7 +227,7 @@ body {
   }
 
   #map {
-    max-height: 200px !important;
+    max-height: 300px !important;
   }
 }
 
@@ -221,5 +239,19 @@ body {
 
   #main-nav .nav-link {
     font-size: 20px;
+  }
+
+  .map-popup h4 {
+    font-size: 0.8rem;
+  }
+
+  #contact-info h3,
+  h4 {
+    font-size: 1rem;
+  }
+
+  #cards .display-4 {
+    font-size: 2rem;
+    margin-bottom: 20px;
   }
 }

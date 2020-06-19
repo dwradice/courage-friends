@@ -15,8 +15,16 @@ const shelterSchema = new mongoose.Schema(
       },
       coordinates: [Number],
       description: String,
+      address: String,
     },
     slug: String,
+    contact: {
+      phone: String,
+      email: String,
+      poc: String,
+      hours: String,
+    },
+    logo: String,
   },
   {
     toJSON: { virtuals: true },
