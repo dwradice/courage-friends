@@ -130,8 +130,15 @@ body {
   color: #2e0152;
 }
 
-#contact-info h4 {
-  color: ;
+#contact-info i {
+  padding-left: 25px;
+  padding-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+#contact-info h3 {
+  padding-left: 10px;
+  font-size: 1.5rem;
 }
 
 #cards .shelterLink {
@@ -227,7 +234,7 @@ body {
   }
 
   #map {
-    max-height: 300px !important;
+    max-height: 250px !important;
   }
 }
 
@@ -245,8 +252,7 @@ body {
     font-size: 0.8rem;
   }
 
-  #contact-info h3,
-  h4 {
+  #contact-info h3 {
     font-size: 1rem;
   }
 

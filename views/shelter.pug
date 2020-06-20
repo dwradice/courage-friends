@@ -15,22 +15,22 @@ block content
     section#contact-info.mt-3.mb-5
         .container
             .row
-                .col-md-8.text-left
+                .col-md-8.text-left.align-items-center
                     h3 Our Contact Info
                     hr
-                    h4 Point of Contact: 
-                        span=shelter.contact.poc
-                    h4 Phone: 
-                        span=shelter.contact.phone
-                    h4 Email: 
-                        span=shelter.contact.email
+                    i.fas.fa-phone-alt
+                    h3.d-inline-block=shelter.contact.phone
+                    br
+                    i.fas.fa-at  
+                    h3.d-inline-block=shelter.contact.email
                     hr
-                    h4 Address: 
-                        span=shelter.location.address
-                    h4 Open From: 
-                        span=shelter.contact.hours
+                    i.fas.fa-map-marker-alt 
+                    h3.d-inline-block=shelter.location.address
+                    br
+                    i.fas.fa-clock 
+                    h3.d-inline-block=shelter.contact.hours
                 .col-md-4.text-center.align-self-center.mt-3
-                    img(src=`/img/logos/${shelter.logo}`)    
+                    img.shelter-logo(src=`/img/logos/${shelter.logo}`)    
     section#cards
       .container
         h3.display-4.text-center Our Current Residents...
