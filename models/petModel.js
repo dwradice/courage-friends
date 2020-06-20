@@ -66,8 +66,8 @@ petSchema.virtual('age').get(function () {
   ) {
     age--;
   }
-  if (age === 0 && this.species === 'cat') age = 'kitten';
-  if (age === 0 && this.species === 'dog') age = 'puppy';
+  if (age === 0 && this.species === 'cat') age = 'Kitten';
+  if (age === 0 && this.species === 'dog') age = 'Puppy';
   return age;
 });
 

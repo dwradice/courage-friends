@@ -59,7 +59,6 @@ body {
   background-position-x: center;
   background-position-y: center;
   min-height: 300px;
-  margin-bottom: 40px;
 }
 
 .showcase-text {
@@ -73,6 +72,22 @@ body {
 
 .showcase-text p {
   font-size: 1.2rem;
+}
+
+#search-bar {
+  background-color: #2e0152;
+  margin-bottom: 10px;
+}
+
+#search-bar .nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding-left: 20px;
+}
+
+#search-bar button {
+  color: #fff;
 }
 
 /* CARDS */
