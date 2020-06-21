@@ -3,7 +3,7 @@ const Shelter = require('../models/shelterModel');
 const AppError = require('./../utils/appError');
 const catchAsync = require('./../utils/catchAsync');
 
-exports.getOverview = catchAsync(async (req, res, next) => {
+exports.getOverview = catchAsync(async (req, res) => {
   if (Object.keys(req.query).length === 0) {
     pets = await Pet.find();
     pets.sort((a, b) => b.dob - a.dob);
@@ -20,7 +20,6 @@ exports.getOverview = catchAsync(async (req, res, next) => {
   res.status(200).render('overview', {
     title: 'All Pets',
     pets,
-    req,
   });
 });
 

@@ -7,7 +7,7 @@ block content
           .showcase-text.text-white
             h3.pt-5 Man's Best Friend Finder
             p find your quintessential companion.
-    
+
     nav#search-bar.navbar.sticky-top.navbar-expand-md
       button.navbar-toggler.btn.btn-block(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
         i.fas.fa-layer-group.fa-2x
@@ -19,39 +19,39 @@ block content
           li.nav-item.dropdown
             a.nav-link.dropdown-toggle(href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Species
             .dropdown-menu(aria-labelledby="navbarDropdown")
-              a.dropdown-item(href=`?species=dog`) Dogs
-              a.dropdown-item(href="?species=cat") Cats
+              a.btn-dog.dropdown-item(href=`?species=dog`) Dogs
+              a.btn-cat.dropdown-item(href="?species=cat") Cats
 
           li.nav-item.dropdown
             a.nav-link.dropdown-toggle(href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Sex
             .dropdown-menu(aria-labelledby="navbarDropdown")
-              a.dropdown-item(href="?sex=male") Male
-              a.dropdown-item(href="?sex=female") Female
+              a.btn-male.dropdown-item(href="?sex=male") Male
+              a.btn-female.dropdown-item(href="?sex=female") Female
               
-          li.nav-item.dropdown
-            a.nav-link.dropdown-toggle(href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Age
-            .dropdown-menu(aria-labelledby="navbarDropdown")
-              a.dropdown-item(href="/") Youngest First
-              a.dropdown-item(href="?sort=dob") Oldest First
+          //- li.nav-item.dropdown
+          //-   a.nav-link.dropdown-toggle(href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Age
+          //-   .dropdown-menu(aria-labelledby="navbarDropdown")
+          //-     a.dropdown-item(href="/") Youngest First
+          //-     a.dropdown-item(href="?sort=dob") Oldest First
               
 
           li.nav-item.dropdown
             a.nav-link.dropdown-toggle(href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Fixed
             .dropdown-menu(aria-labelledby="navbarDropdown")
-              a.dropdown-item(href="?&fixed=true") Fixed
-              a.dropdown-item(href="?fixed=false") Not Yet Fixed
+              a.btn-fixed.dropdown-item(href="?fixed=true") Fixed
+              a.btn-not-fixed.dropdown-item(href="?fixed=false") Not Yet Fixed
 
           li.nav-item.dropdown
             a.nav-link.dropdown-toggle(href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Adopted
             .dropdown-menu(aria-labelledby="navbarDropdown")
-              a.dropdown-item(href="?adopted=false") Available
-              a.dropdown-item(href="?adopted=true") Recently Adopted
+              a.btn-not-adopted.dropdown-item(href="?adopted=false") Available
+              a.btn-adopted.dropdown-item(href="?adopted=true") Recently Adopted
 
     section#cards
       .container
         .row
             each pet in pets
-              .col-md-4
+              .col-md-4.col-6
                 .card.pt-3.mb-5
                   .text-center
                       img(src=`/img/pets/${pet.photo}` id="pet-photo" class="card-img-top rounded-circle" alt="PHOTO")
@@ -62,18 +62,19 @@ block content
                   .card-body
                       h4.card-title.name.pb-2= pet.name
 
-                      -pet.age >= 1 ? ageIntro = `${pet.age} year old` : ageIntro = pet.age
+                      -pet.age >= 1 ? ageIntro = `${pet.ageStatus} year old` : ageIntro = pet.age
 
                       h5.card-subtitle.pet-age.pb-2= ageIntro
                       
-                      h5.card-subtitle= ` ${pet.sex}`
-                          
+                      h5.card-subtitle=pet.sex
+
                       hr
 
-                      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae culpa nobis, nisi illo modi iste?
+                      p.pet-description Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae culpa nobis, nisi illo modi iste?
                   
 
                   .card-footer.text-white
                       p Available for adoption at...
                       a.btn.btn-outline-light.shelterLink(href=`/shelter/${pet.shelter.slug}`)=pet.shelter.name
+    script(src='/js/index.js')
  

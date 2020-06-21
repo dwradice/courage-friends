@@ -85,6 +85,10 @@ body {
   color: #fff;
 }
 
+#search-bar button:focus {
+  box-shadow: 0.25px 0.25px 2px 2px #fff;
+}
+
 #search-bar .home-link {
   border: 1px #fff solid;
   padding-left: 10px;
@@ -96,6 +100,10 @@ body {
 
 #search-bar i:hover {
   color: #c286f3;
+}
+
+#search-bar .dropdown-item:active {
+  background-color: #c286f3;
 }
 
 /* CARDS */
@@ -272,8 +280,46 @@ body {
     font-size: 1rem;
   }
 
+  #cards .name {
+    font-size: 1.25rem !important;
+    background-image: none;
+    color: #2e0152;
+    margin-left: none;
+    padding-left: 0;
+  }
+
+  #cards .card-img-top {
+    height: 140px;
+    width: 140px;
+  }
+
+  #cards .card-subtitle {
+    font-size: 1rem;
+  }
+
   #cards .display-4 {
     font-size: 2rem;
     margin-bottom: 20px;
+  }
+
+  #cards .card-footer {
+    font-size: 0.75rem;
+  }
+
+  #cards .shelterLink {
+    font-size: 0.75rem;
+  }
+
+  .adopted-text {
+    font-size: 1.8rem;
+  }
+
+  #search-bar .home-link {
+    border: none;
+  }
+
+  .pet-description,
+  #cards hr {
+    display: none;
   }
 }

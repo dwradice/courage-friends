@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const slugify = require('slugify');
+const { aggregate } = require('./shelterModel');
 
 const petSchema = new mongoose.Schema(
   {
@@ -44,6 +45,7 @@ const petSchema = new mongoose.Schema(
       type: String,
       default: 'default.jpg',
     },
+    ageStatus: String,
   },
   {
     toJSON: { virtuals: true },
@@ -68,6 +70,7 @@ petSchema.virtual('age').get(function () {
   }
   if (age === 0 && this.species === 'cat') age = 'Kitten';
   if (age === 0 && this.species === 'dog') age = 'Puppy';
+
   return age;
 });
 
@@ -76,6 +79,28 @@ petSchema.pre(/^find/, function (next) {
     path: 'shelter',
     select: 'name location slug',
   });
+  next();
+});
+
+petSchema.pre(/^find/, function (next) {
+  var dob = `${this.dob}`;
+  var year = Number(dob.substr(0, 4));
+  var month = Number(dob.substr(4, 2)) - 1;
+  var day = Number(dob.substr(6, 2));
+  var today = new Date();
+  var age = today.getFullYear() - year;
+  if (
+    today.getMonth() < month ||
+    (today.getMonth() == month && today.getDate() < day)
+  ) {
+    age--;
+  }
+  console.log(dob);
+
+  age > 3 ? (this.ageStatus = 'adult') : (this.ageStatus = 'young');
+
+  console.log(this.ageStatus);
+
   next();
 });
 
