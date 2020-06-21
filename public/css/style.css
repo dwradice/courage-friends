@@ -32,18 +32,6 @@ body {
   border-bottom: #2e0152 2px solid;
 }
 
-#main-nav i {
-  color: #2e0152;
-}
-
-#main-nav i:hover {
-  color: #2e015291;
-}
-
-#main-nav .nav-link {
-  font-size: 24px;
-}
-
 /* OVERVIEW PAGE */
 
 #showcase {
@@ -71,7 +59,7 @@ body {
 
 #search-bar {
   background-color: #2e0152;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 #search-bar .nav-link {
@@ -84,7 +72,9 @@ body {
 #search-bar button {
   color: #fff;
 }
-
+#search-bar button:hover {
+  color: #c286f3;
+}
 #search-bar button:focus {
   box-shadow: 0.25px 0.25px 2px 2px #fff;
 }
@@ -98,28 +88,27 @@ body {
   color: #c286f3;
 }
 
-#search-bar i:hover {
-  color: #c286f3;
-}
-
 #search-bar .dropdown-item:active {
   background-color: #c286f3;
 }
 
 /* CARDS */
 
-#cards .card-img-top {
+#cards-overview .card-img-top,
+#cards-shelter .card-img-top {
   height: 250px;
   width: 250px;
   max-height: 100%;
   max-width: 100%;
 }
 
-#cards .card {
+#cards-overview .card,
+#cards-shelter .card {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
-#cards .name {
+#cards-overview .name,
+#cards-shelter .name {
   display: inline-block;
   padding: 3px 10px 3px 10px;
   font-size: 40px;
@@ -131,7 +120,20 @@ body {
   );
 }
 
-#cards .card-footer {
+#cards-overview .shelterLink {
+  text-decoration: none;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #fff;
+}
+
+#cards-overview .shelterLink:hover {
+  color: #2e0152;
+  border: #2e0152 1px;
+  border-style: inset;
+}
+
+#cards-overview .card-footer {
   background-image: linear-gradient(
     to bottom right,
     rgba(117, 55, 145, 0.747),
@@ -172,20 +174,7 @@ body {
   font-size: 1.5rem;
 }
 
-#cards .shelterLink {
-  text-decoration: none;
-  font-size: 1.5rem;
-  text-align: center;
-  color: #fff;
-}
-
-#cards .shelterLink:hover {
-  color: #2e0152;
-  border: #2e0152 1px;
-  border-style: inset;
-}
-
-#cards .display-4 {
+#cards-shelter .display-4 {
   color: #2e0152;
 }
 
@@ -280,7 +269,7 @@ body {
     font-size: 1rem;
   }
 
-  #cards .name {
+  #cards-overview .name {
     font-size: 1.25rem !important;
     background-image: none;
     color: #2e0152;
@@ -288,25 +277,30 @@ body {
     padding-left: 0;
   }
 
-  #cards .card-img-top {
+  #cards-overview .card-img-top {
     height: 140px;
     width: 140px;
   }
 
-  #cards .card-subtitle {
+  #cards-overview .card-subtitle {
     font-size: 1rem;
   }
 
-  #cards .display-4 {
+  #cards-overview .card {
+    padding: 0;
+    margin: 0;
+  }
+
+  #cards-overview .display-4 {
     font-size: 2rem;
     margin-bottom: 20px;
   }
 
-  #cards .card-footer {
+  #cards-overview .card-footer {
     font-size: 0.75rem;
   }
 
-  #cards .shelterLink {
+  #cards-overview .shelterLink {
     font-size: 0.75rem;
   }
 
@@ -319,7 +313,7 @@ body {
   }
 
   .pet-description,
-  #cards hr {
+  #cards-overview hr {
     display: none;
   }
 }

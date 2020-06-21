@@ -47,7 +47,7 @@ block content
               a.btn-not-adopted.dropdown-item(href="?adopted=false") Available
               a.btn-adopted.dropdown-item(href="?adopted=true") Recently Adopted
 
-    section#cards
+    section#cards-overview
       .container
         .row
             each pet in pets
@@ -61,8 +61,8 @@ block content
 
                   .card-body
                       h4.card-title.name.pb-2= pet.name
-
-                      -pet.age >= 1 ? ageIntro = `${pet.ageStatus} year old` : ageIntro = pet.age
+                      
+                      -pet.age >= 1 ? ageIntro = `${pet.age} year old` : ageIntro = pet.age
 
                       h5.card-subtitle.pet-age.pb-2= ageIntro
                       
