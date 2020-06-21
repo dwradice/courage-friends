@@ -3,6 +3,7 @@ footer#footer
         .row.text-center
             .col-sm-12.align-self-center
                 img(src="/img/courage-logo - Copy.png" height="50px" alt="")
-                div Courage & Friends &copy; 2020 by Dylan Radice
+                - const year = new Date().getFullYear()
+                div Courage & Friends &copy; #{year} by Dylan Radice
 
 

@@ -10,16 +10,16 @@ block content
     
     nav#search-bar.navbar.sticky-top.navbar-expand-md
       button.navbar-toggler.btn.btn-block(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
-        | Sort Animals
+        i.fas.fa-layer-group.fa-2x
 
       .collapse.navbar-collapse#navbarSupportedContent
         ul.navbar-nav.mx-auto
           li.nav-item
-            a.nav-link(href="/") All Pets
+            a.home-link.nav-link(href="/") All Pets
           li.nav-item.dropdown
             a.nav-link.dropdown-toggle(href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Species
             .dropdown-menu(aria-labelledby="navbarDropdown")
-              a.dropdown-item(href="?species=dog") Dogs
+              a.dropdown-item(href=`?species=dog`) Dogs
               a.dropdown-item(href="?species=cat") Cats
 
           li.nav-item.dropdown
@@ -27,17 +27,18 @@ block content
             .dropdown-menu(aria-labelledby="navbarDropdown")
               a.dropdown-item(href="?sex=male") Male
               a.dropdown-item(href="?sex=female") Female
-
+              
           li.nav-item.dropdown
             a.nav-link.dropdown-toggle(href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Age
             .dropdown-menu(aria-labelledby="navbarDropdown")
               a.dropdown-item(href="/") Youngest First
               a.dropdown-item(href="?sort=dob") Oldest First
+              
 
           li.nav-item.dropdown
             a.nav-link.dropdown-toggle(href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Fixed
             .dropdown-menu(aria-labelledby="navbarDropdown")
-              a.dropdown-item(href="?fixed=true") Fixed
+              a.dropdown-item(href="?&fixed=true") Fixed
               a.dropdown-item(href="?fixed=false") Not Yet Fixed
 
           li.nav-item.dropdown

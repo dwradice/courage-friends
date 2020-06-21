@@ -44,11 +44,6 @@ body {
   font-size: 24px;
 }
 
-#logo {
-  margin-right: 100px;
-  margin-left: 100px;
-}
-
 /* OVERVIEW PAGE */
 
 #showcase {
@@ -88,6 +83,19 @@ body {
 
 #search-bar button {
   color: #fff;
+}
+
+#search-bar .home-link {
+  border: 1px #fff solid;
+  padding-left: 10px;
+}
+
+#search-bar .nav-link:hover {
+  color: #c286f3;
+}
+
+#search-bar i:hover {
+  color: #c286f3;
 }
 
 /* CARDS */
@@ -196,10 +204,6 @@ body {
   font-size: 50px;
   top: 22%;
 }
-
-/* #mapbox {
-  min-height: 400px;
-} */
 
 /* ERROR PAGE */
 
