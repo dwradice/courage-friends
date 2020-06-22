@@ -41,7 +41,7 @@ block content
                     .text-center
                         img(src=`/img/pets/${pet.photo}` class="card-img-top rounded-circle" alt="PHOTO")
                         -if(pet.adopted === true)
-                            .adopted
+                            .adopted-shelter
                                 h3.adopted-text Adopted!
                     .card-body
                         h4.card-title.name.pb-2= pet.name
