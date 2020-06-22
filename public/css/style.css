@@ -387,6 +387,7 @@ a {
 
   #cards-overview .card-footer {
     font-size: 0.75rem;
+    overflow: hidden;
   }
 
   #cards-overview .shelterLink {
@@ -407,6 +408,6 @@ a {
   }
 
   #modal-img {
-    height: 390px;
+    height: 360px;
   }
 }
