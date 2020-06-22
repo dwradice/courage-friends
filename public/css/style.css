@@ -26,6 +26,11 @@ body {
   background-color: #2e0152;
 }
 
+.filter-btn {
+  border: #fff 1px solid;
+  background-color: #c286f3af;
+}
+
 /* HEADER */
 
 #main-nav {
@@ -67,8 +72,13 @@ body {
   text-decoration: none;
   font-size: 1.2rem;
   padding-left: 20px;
+  padding-right: 20px;
 }
 
+#search-bar .nav-item {
+  margin-left: 10px;
+  margin-right: 10px;
+}
 #search-bar button {
   color: #fff;
 }
@@ -81,7 +91,6 @@ body {
 
 #search-bar .home-link {
   border: 1px #fff solid;
-  padding-left: 10px;
 }
 
 #search-bar .nav-link:hover {

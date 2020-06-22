@@ -46,7 +46,7 @@ block content
                     .card-body
                         h4.card-title.name.pb-2= pet.name
 
-                        -pet.age >= 1 ? ageIntro = `${pet.age} year old` : ageIntro = `Less than a year old ${pet.age}`
+                        -pet.age >= 1 ? ageIntro = `${pet.age} year old ${pet.species}` : ageIntro = pet.age
 
                         h5.card-subtitle.pb-2= ageIntro
                         h5.card-subtitle= `${pet.sex}`

@@ -17,7 +17,7 @@ block content
           li.nav-item
             a.home-link.nav-link(href="/") All Pets
           li.nav-item.dropdown
-            a.nav-link.dropdown-toggle(href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Species
+            a.mx-1.nav-link.dropdown-toggle(href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Species
             .dropdown-menu(aria-labelledby="navbarDropdown")
               a.btn-dog.dropdown-item(href=`?species=dog`) Dogs
               a.btn-cat.dropdown-item(href="?species=cat") Cats
@@ -62,7 +62,7 @@ block content
                   .card-body
                       h4.card-title.name.pb-2= pet.name
                       
-                      -pet.age >= 1 ? ageIntro = `${pet.age} year old` : ageIntro = pet.age
+                      -pet.age >= 1 ? ageIntro = `${pet.age} year old ${pet.species}` : ageIntro = pet.age
 
                       h5.card-subtitle.pet-age.pb-2= ageIntro
                       
