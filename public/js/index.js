@@ -28,14 +28,14 @@ window.addEventListener('load', () => {
 
 const filterSearch = (btn, href) => {
   document.querySelector(btn).addEventListener('click', function (e) {
+    // e.preventDefault();
     const target = event.target;
     const url = window.location.href;
     const category = href.split('=')[0];
-    const value = href.split('=')[1];
-
-    // PERSIST CLASSNAME OF TARGET
+    let newUrl = url;
     let buttons = [];
 
+    // PERSIST CLASSNAME OF TARGET
     // Retrieve from local storage
     if (localStorage.getItem('buttons')) {
       buttons = [localStorage.getItem('buttons')];
@@ -45,28 +45,25 @@ const filterSearch = (btn, href) => {
     localStorage.setItem('buttons', buttons);
 
     //Concat and replace query on url
-    let currentValue;
-    //Check to see if url includes same query as input
+    //Check to see if url includes new input category
     if (url.includes(category)) {
+      // Retrieve all queries
       const querys = url.split('?')[1].split('&');
-      //If same query exists, grab value
+      // Replace old query with new
       querys.forEach(el => {
         if (el.startsWith(category)) {
-          currentValue = el.split('=')[1];
+          newUrl = newUrl.replace(el, href);
         }
       });
     }
 
-    //Replace current value of query with new value
-    URL = url.replace(currentValue, value);
-
-    //Set href on
-    if (URL.includes('?') && !URL.includes(category)) {
-      target.href = `${URL}&${href}`;
-    } else if (url.includes(category)) {
-      target.href = `${URL}`;
+    //Set href
+    if (newUrl.includes('?') && !newUrl.includes(category)) {
+      target.href = `${newUrl}&${href}`;
+    } else if (newUrl.includes(category)) {
+      target.href = `${newUrl}`;
     } else {
-      target.href = `${url}?${href}`;
+      target.href = `${newUrl}?${href}`;
     }
   });
 };
