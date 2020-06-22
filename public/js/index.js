@@ -15,6 +15,17 @@ window.addEventListener('load', () => {
   }
 });
 
+//If no match, show alert
+window.addEventListener('load', () => {
+  div = document.createElement('div');
+  div.classList.add('col', 'match-error');
+  const html = `<h4>🐱 No Pets match those criteria. 😿<br>Click 'All Pets' to reset</h4>`;
+  if (!document.querySelector('.card')) {
+    div.innerHTML = `${html}`;
+    document.getElementById('row').appendChild(div);
+  }
+});
+
 const filterSearch = (btn, href) => {
   document.querySelector(btn).addEventListener('click', function (e) {
     const target = event.target;
@@ -31,7 +42,6 @@ const filterSearch = (btn, href) => {
     }
     // Add current btn class name to local storage
     buttons.push(btn);
-    console.log(buttons);
     localStorage.setItem('buttons', buttons);
 
     //Concat and replace query on url

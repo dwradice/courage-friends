@@ -80,6 +80,17 @@ body {
   color: #fff;
 }
 
+.match-error {
+  min-height: 300px;
+  text-align: center;
+  position: relative;
+  padding-top: 100px;
+}
+
+.match-error h4 {
+  font-size: 2rem;
+}
+
 #search-bar .nav-item {
   margin-left: 10px;
   margin-right: 10px;

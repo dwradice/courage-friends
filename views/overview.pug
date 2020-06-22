@@ -28,13 +28,6 @@ block content
               a.btn-male.dropdown-item(href="?sex=male") Male
               a.btn-female.dropdown-item(href="?sex=female") Female
               
-          //- li.nav-item.dropdown
-          //-   a.nav-link.dropdown-toggle(href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Age
-          //-   .dropdown-menu(aria-labelledby="navbarDropdown")
-          //-     a.dropdown-item(href="/") Youngest First
-          //-     a.dropdown-item(href="?sort=dob") Oldest First
-              
-
           li.nav-item.dropdown
             a.nav-link.dropdown-toggle(href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Fixed
             .dropdown-menu(aria-labelledby="navbarDropdown")
@@ -49,7 +42,7 @@ block content
 
     section#cards-overview
       .container
-        .row
+        .row#row
             each pet in pets
               .col-md-4.col-6
                 .card.pt-3.mb-5
