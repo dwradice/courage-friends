@@ -75,6 +75,11 @@ body {
   padding-right: 20px;
 }
 
+#search-bar .dropdown-item:hover {
+  background-color: #c286f3;
+  color: #fff;
+}
+
 #search-bar .nav-item {
   margin-left: 10px;
   margin-right: 10px;
