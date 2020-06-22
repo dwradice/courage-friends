@@ -4,6 +4,10 @@ body {
   font-family: 'Raleway';
   background-color: #f8f9fa;
 }
+
+a {
+  cursor: pointer;
+}
 /* UTILITY */
 
 .overlay {
@@ -166,6 +170,45 @@ body {
   );
 }
 
+.modal-header,
+.modal-footer {
+  color: #fff;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(181, 111, 213, 0.85),
+    rgba(53, 13, 77, 0.781)
+  );
+}
+
+.modal-bottom a {
+  text-decoration: none;
+  color: #fff;
+  padding: 0;
+}
+
+.modal-bottom a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+#modal-img {
+  height: 450px;
+  margin: 0;
+  padding: 0;
+}
+
+.modal-header .modal-title {
+  font-size: 30px;
+  padding-left: 2rem;
+}
+
+.modal i {
+  color: #2e0152;
+}
+
+.modal .breed {
+  text-transform: capitalize;
+}
 /* SHELTER PAGE */
 
 #shelter-landing {
@@ -361,5 +404,9 @@ body {
   .pet-description,
   #cards-overview hr {
     display: none;
+  }
+
+  #modal-img {
+    height: 390px;
   }
 }

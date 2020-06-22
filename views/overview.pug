@@ -44,30 +44,59 @@ block content
       .container
         .row#row
             each pet in pets
+              -const index = pets.indexOf(pet);
+
+
               .col-md-4.col-6
                 .card.pt-3.mb-5
                   .text-center
-                      img(src=`/img/pets/${pet.photo}` id="pet-photo" class="card-img-top rounded-circle" alt="PHOTO")
-                      -if(pet.adopted === true)
-                            a.adopted(href=`/shelter/${pet.shelter.slug}`)
-                                h3.adopted-text
+                      a(data-toggle="modal" data-target=`#pet${index}modal`)
+                        img(src=`/img/pets/${pet.photo}` id="pet-photo" class="card-img-top rounded-circle" alt="PHOTO")
+                        -if(pet.adopted === true)
+                              a.adopted(href=`/shelter/${pet.shelter.slug}`)
+                                  h3.adopted-text
+                  a(data-toggle="modal" data-target=`#pet${index}modal`)
+                    .card-body
+                        h4.card-title.name.pb-2= pet.name
+                        
+                        -pet.age >= 1 ? ageIntro = `${pet.age} year old ${pet.species}` : ageIntro = pet.age
 
-                  .card-body
-                      h4.card-title.name.pb-2= pet.name
-                      
-                      -pet.age >= 1 ? ageIntro = `${pet.age} year old ${pet.species}` : ageIntro = pet.age
+                        h5.card-subtitle.pet-age.pb-2= ageIntro
+                        
+                        h5.card-subtitle=pet.sex
 
-                      h5.card-subtitle.pet-age.pb-2= ageIntro
-                      
-                      h5.card-subtitle=pet.sex
+                        hr
 
-                      hr
-
-                      p.pet-description Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae culpa nobis, nisi illo modi iste?
-                  
+                        p.pet-description Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae culpa nobis, nisi illo modi iste?
+                    
 
                   .card-footer.text-white
                       p Available for adoption at...
                       a.btn.btn-outline-light.shelterLink(href=`/shelter/${pet.shelter.slug}`)=pet.shelter.name
+
+                
+                .modal.fade(id=`pet${index}modal`)
+                  .modal-dialog.modal-dialog-centered
+                      .modal-content
+                          .modal-header.align-items-center
+                              h5.align-self-center.modal-title=pets[index].name
+                              button.text-white.close(data-dismiss="modal" style="font-size: 3rem") &times;
+                          .modal-body.text-center.p-2.m-1
+                              img#modal-img(src=`/img/pets/${pet.photo}`)
+                              .row
+                                .col.mt-3.mb-2
+                                  span
+                                    -pet.species=== 'dog' ? icon = 'fa-dog' :icon = 'fa-cat'
+                                    i.mr-2(class=`fas ${icon} fa-3x`)
+                                    h4.breed.ml-2.d-inline=pet.breed
+                                  
+              
+
+                              
+                          a.btn(href=`/shelter/${pet.shelter.slug}`) 
+                            .modal-footer
+                              p.mx-auto Click here for contact information.
+
+        
     script(src='/js/index.js')
  
