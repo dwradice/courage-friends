@@ -227,6 +227,10 @@ body {
   top: 22%;
 }
 
+#cards-overview .adopted-text {
+  top: 17%;
+}
+
 /* ERROR PAGE */
 
 #error {
