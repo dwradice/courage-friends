@@ -15,9 +15,11 @@ const AppError = require('./utils/appError');
 
 const app = express();
 
+// Set PUG
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
+// Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Set Security HTTP Headers
@@ -51,6 +53,7 @@ app.use(
   })
 );
 
+// Compression
 app.use(compression());
 
 // ROUTES
