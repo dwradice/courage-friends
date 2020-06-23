@@ -1,3 +1,4 @@
+//On load retrieve active btns from local storage
 window.addEventListener('load', () => {
   //Retrieve Local Storage
   if (localStorage.getItem('buttons')) {
@@ -15,7 +16,7 @@ window.addEventListener('load', () => {
   }
 });
 
-//If no match, show alert
+//If no pets match filter, show msg
 window.addEventListener('load', () => {
   div = document.createElement('div');
   div.classList.add('col', 'match-error');
@@ -26,9 +27,9 @@ window.addEventListener('load', () => {
   }
 });
 
+// Filter search with queries: add queries, avoid duplicates, change value of existing query
 const filterSearch = (btn, href) => {
   document.querySelector(btn).addEventListener('click', function (e) {
-    // e.preventDefault();
     const target = event.target;
     const url = window.location.href;
     const category = href.split('=')[0];
@@ -42,6 +43,7 @@ const filterSearch = (btn, href) => {
     }
     // Add current btn class name to local storage
     buttons.push(btn);
+    // Set localstorage buttons array + new button
     localStorage.setItem('buttons', buttons);
 
     //Concat and replace query on url
@@ -78,5 +80,9 @@ filterSearch('.btn-adopted', 'adopted=true');
 filterSearch('.btn-not-adopted', 'adopted=false');
 
 document.querySelector('.home-link').addEventListener('click', e => {
+  localStorage.clear();
+});
+
+document.querySelector('.logo-link').addEventListener('click', e => {
   localStorage.clear();
 });
