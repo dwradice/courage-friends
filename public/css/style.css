@@ -334,6 +334,13 @@ a {
   text-decoration: none;
   color: #2e0152;
   padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+#btn-filter-reset:hover {
+  background-color: #c286f39d;
+  border: #2e0152 1px solid;
 }
 
 /* FOOTER */
@@ -390,6 +397,15 @@ a {
   }
   #shelter-landing h3 {
     font-size: 2rem !important;
+  }
+
+  #cards-overview .shelter-link {
+    font-size: 1rem;
+  }
+
+  #cards-overview .card-img-top {
+    height: 200px;
+    width: 200px;
   }
 
   #logo {
