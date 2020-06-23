@@ -6,17 +6,11 @@ const catchAsync = require('./../utils/catchAsync');
 exports.getOverview = catchAsync(async (req, res) => {
   if (Object.keys(req.query).length === 0) {
     pets = await Pet.find();
-    pets.sort((a, b) => b.dob - a.dob);
-  } else if (req.query.sort) {
-    sortStr = req.query.sort;
-    pets = await Pet.find();
-    pets = pets.sort((a, b) => a[sortStr] - b[sortStr]);
   } else {
     queryStr = JSON.stringify(req.query);
     pets = await Pet.find(JSON.parse(queryStr));
-    pets.sort((a, b) => b.dob - a.dob);
   }
-
+  pets.sort((a, b) => b.dob - a.dob);
   res.status(200).render('overview', {
     title: 'All Pets',
     pets,

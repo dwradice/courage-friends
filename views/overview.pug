@@ -8,7 +8,7 @@ block content
           h3.pt-5 Man's Best Friend Finder
           p find your quintessential companion.
 
-  nav#search-bar.navbar.sticky-top.navbar-expand-md
+  nav#filter-search-bar.navbar.sticky-top.navbar-expand-md
     button.navbar-toggler.btn.btn-block(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
       i.fas.fa-layer-group.fa-2x
 
@@ -71,13 +71,13 @@ block content
 
               .card-footer.text-white
                 p Available for adoption at...
-                a.btn.btn-outline-light.shelterLink(href=`/shelter/${pet.shelter.slug}`)=pet.shelter.name
+                a.btn.btn-outline-light.shelter-link(href=`/shelter/${pet.shelter.slug}`)=pet.shelter.name
 
 
             .modal.fade(id=`pet${index}modal`)
-              .modal-dialog.modal-dialog-centered
+              .modal-dialog.modal-dialog-centered.modal-lg
                 .modal-content 
-                  .modal-body.text-center.p-2.m-1
+                  .modal-body.text-center.p-0
                     button.close(data-dismiss="modal" style="font-size: 3rem") &times;
                     img#modal-img(src=`/img/pets/${pet.photo}`)
                     .row

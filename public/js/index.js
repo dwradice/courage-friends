@@ -20,7 +20,11 @@ window.addEventListener('load', () => {
 window.addEventListener('load', () => {
   div = document.createElement('div');
   div.classList.add('col', 'match-error');
-  const html = `<h4>🐱 No Pets match those criteria. 😿<br>Click 'All Pets' to reset</h4>`;
+  const html = `
+  <div>
+    <h4 class="mb-5">🐱 No Pets match those criteria. 😿</h4> 
+    <a id="btn-filter-reset" href="/"> Let's try again </a>
+  </div>`;
   if (!document.querySelector('.card')) {
     div.innerHTML = `${html}`;
     document.getElementById('row').appendChild(div);
@@ -84,5 +88,10 @@ document.querySelector('.home-link').addEventListener('click', e => {
 });
 
 document.querySelector('.logo-link').addEventListener('click', e => {
+  localStorage.clear();
+});
+
+document.getElementById('btn-filter-reset').addEventListener('click', e => {
+  e.preventDefault();
   localStorage.clear();
 });
