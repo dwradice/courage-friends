@@ -170,44 +170,63 @@ a {
   );
 }
 
-.modal-header,
-.modal-footer {
-  color: #fff;
-  background-image: linear-gradient(
-    to bottom right,
-    rgba(181, 111, 213, 0.85),
-    rgba(53, 13, 77, 0.781)
-  );
-}
-
-.modal-bottom a {
-  text-decoration: none;
-  color: #fff;
-  padding: 0;
-}
-
-.modal-bottom a:hover {
-  text-decoration: none;
-  color: #fff;
-}
-
 #modal-img {
   height: 450px;
   margin: 0;
   padding: 0;
 }
 
-.modal-header .modal-title {
-  font-size: 30px;
-  padding-left: 2rem;
+.modal .contact-btn {
+  background-color: #c286f3;
+  color: white;
+  display: inline-block;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 1.25rem;
 }
 
-.modal i {
+.modal .contact-btn:hover {
   color: #2e0152;
+}
+
+.modal .modal-title {
+  font-size: 3rem;
+  background-color: #2e0152;
+  display: inline-block;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .modal .breed {
   text-transform: capitalize;
+  display: inline-block;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(181, 111, 213, 0.85),
+    rgba(53, 13, 77, 0.781)
+  );
+  padding: 10px;
+}
+
+.modal .modal-body {
+  position: relative;
+}
+
+.modal .close {
+  position: absolute;
+  left: 87.25%;
+  color: #2e0152;
+  background-color: #fff;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.modal .modal-pet-details {
+  position: absolute;
+  top: 59%;
+  left: 6%;
+  color: #fff;
 }
 /* SHELTER PAGE */
 
@@ -408,5 +427,27 @@ a {
 
   #modal-img {
     height: 360px;
+  }
+
+  .modal .modal-title {
+    font-size: 2rem;
+  }
+
+  .modal .breed {
+    font-size: 1.25rem;
+  }
+  .modal .modal-pet-details {
+    position: absolute;
+    top: 55%;
+    left: 8%;
+    color: #fff;
+  }
+
+  .modal .close {
+    left: 81.5%;
+  }
+
+  .modal .contact-btn {
+    font-size: 0.9rem;
   }
 }
